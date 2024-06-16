@@ -11,3 +11,16 @@ final List<String> responses = [
   'Galo Ganhou!',
   'Sem problemas, Desculpado'
 ];
+
+
+String getResponse(String input) {
+  input = input.toLowerCase();
+
+  for (int i = 0; i < keywords.length; i++) {
+    if (input.contains(keywords[i].toLowerCase())) {
+      return responses[i];
+    }
+  }
+  
+  return 'Desculpe, não entendi sua pergunta.';
+}
